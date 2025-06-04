@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وتر - صلاة الليل</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#166435">
+  <link rel="apple-touch-icon" href="iconwitr.jpg">
+
+</head>
+<body class="body-bg">
+
+  <header class="header">
+    <div class="logo-title">
+      <img src="iconwitr.jpg" alt="شعار وتر" class="logo-img" />
+      <h1>وتر</h1>
+    </div>
+    <p>دليلك لصلاة الوتر - صفة، وقت، وأدعية</p>
+  </header>
+
+  <main class="container">
+    <section class="quote">
+      <blockquote>قال ﷺ: "اجعلوا آخر صلاتكم بالليل وتراً"</blockquote>
+    </section>
+
+    <nav class="nav-links">
+      <a href="pages/how-to.html">كيفية صلاة الوتر</a>
+      <a href="pages/timing.html">وقت صلاة الوتر</a>
+      <a href="pages/ad3eya/index.html">أدعية الوتر</a>
+    </nav>
+
+    <section class="countdown-section">
+      <h2>الوقت المتبقي لصلاة الوتر:</h2>
+      <div id="countdown">جارٍ التحميل...</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>صدقة جارية - أسأل الله أن يتقبل</p>
+  </footer>
+
+  
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(() => console.log('Service Worker مسجل بنجاح'))
+        .catch(e => console.error('فشل تسجيل SW', e));
+    }
+  </script>
+
+
+</body>
+</html>

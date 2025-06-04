@@ -1,0 +1,21 @@
+{
+  "name": "witr salah",
+  "short_name": "Witr",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#166435",
+  "theme_color": "#166435",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "iconwitr.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "iconwitr.jpg",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

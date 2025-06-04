@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+body {
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f0fdf4, #ffffff);
+  color: #1e3a1e;
+  direction: rtl;
+}
+
+.header {
+  background-color: #166534;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.header p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.container {
+  padding: 2rem 1.2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #14532d;
+  border-bottom: 2px solid #16a34a;
+  padding-bottom: 0.5rem;
+}
+
+/* === روابط التنقل (أزرار) === */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.nav-links a {
+  background-color: #22c55e;
+  color: white;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #16a34a;
+}
+
+/* === أقسام الأدعية === */
+.duaa-section {
+  background-color: #ffffff;
+  border-right: 5px solid #16a34a;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.duaa-section h2 {
+  color: #166534;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.duaa-section p {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.8;
+}
+
+.adab-title {
+  font-weight: bold;
+  color: #064e3b;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* === العد التنازلي === */
+.countdown-section {
+  text-align: center;
+  background-color: #dcfce7;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.countdown-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #14532d;
+}
+
+#countdown {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b91c1c;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .duaa-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .duaa-section p {
+    font-size: 1rem;
+  }
+
+  .adab-title {
+    font-size: 1.1rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+}
+
+
+
+
+
+
+.ad3eya-body {
+  background: linear-gradient(to bottom, #ecfdf5, #f0fdf4);
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1e3a1e;
+}
+
+.section-header {
+  background-color: #166534;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.section-content {
+  padding: 1.5rem;
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.adab-card, .duaa-card {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-right: 5px solid #22c55e;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.adab-card h3, .duaa-card h2 {
+  margin-bottom: 1rem;
+  color: #166534;
+  font-size: 1.4rem;
+}
+
+.adab-card ul {
+  padding: 0 1rem;
+  margin: 0;
+}
+
+.adab-card li {
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+  list-style-type: "🟢 ";
+}
+
+.duaa-text p {
+  font-size: 1.3rem;
+  line-height: 2;
+  margin: 1rem 0;
+  text-align: center;
+  color: #0f172a;
+}
+
+
+
+
+
+.return-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #166534;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.return-button:hover {
+  background-color: #14532d;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+.countdown-section {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b91c1c;
+}
