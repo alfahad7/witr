@@ -1,4 +1,5 @@
 const countdownEl = document.getElementById('countdown');
+
 let alerted = false;
 
 function formatTime(ms) {
@@ -32,8 +33,10 @@ async function fetchPrayerTimes(lat, lng) {
 
 function getTimeToWitr(timings) {
   const now = new Date();
+
   const ishaStr = timings.Isha;
   const fajrStr = timings.Fajr;
+
   const todayStr = now.toISOString().split('T')[0];
 
   const ishaDate = new Date(`${todayStr}T${ishaStr}:00`);
@@ -77,53 +80,39 @@ function updateCountdown(targetTime) {
   return true;
 }
 
-// ✅ الدالة الجديدة
-async function startWithCoordinates(latitude, longitude) {
-  let timings = await fetchPrayerTimes(latitude, longitude);
-  if (!timings) return;
-
-  function loop() {
-    const targetTime = getTimeToWitr(timings);
-
-    if (!updateCountdown(targetTime)) {
-      setTimeout(async () => {
-        const newTimings = await fetchPrayerTimes(latitude, longitude);
-        if (newTimings) {
-          timings = newTimings;
-        }
-      }, 60000);
-    }
-
-    requestAnimationFrame(loop);
-  }
-
-  loop();
-}
-
-// ✅ الدالة الرئيسية - تبدأ كل شيء
-function startCountdown() {
-  if (!navigator.geolocation) {
+async function startCountdown() {
+  if(!navigator.geolocation) {
     countdownEl.textContent = 'المتصفح لا يدعم تحديد الموقع.';
     return;
   }
 
-  const cachedPosition = localStorage.getItem('userLocation');
-  if (cachedPosition) {
-    const { latitude, longitude } = JSON.parse(cachedPosition);
-    startWithCoordinates(latitude, longitude);
-  } else {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-        localStorage.setItem('userLocation', JSON.stringify({ latitude, longitude }));
-        startWithCoordinates(latitude, longitude);
-      },
-      (error) => {
-        countdownEl.textContent = 'تعذّر الحصول على الموقع. يرجى السماح بالوصول للموقع.';
-        console.error(error);
+  navigator.geolocation.getCurrentPosition(async (position) => {
+    const { latitude, longitude } = position.coords;
+
+    let timings = await fetchPrayerTimes(latitude, longitude);
+    if(!timings) return;
+
+    function loop() {
+      const targetTime = getTimeToWitr(timings);
+
+      if(!updateCountdown(targetTime)) {
+        setTimeout(async () => {
+          const newTimings = await fetchPrayerTimes(latitude, longitude);
+          if(newTimings) {
+            timings = newTimings;
+          }
+        }, 60000);
       }
-    );
-  }
+
+      requestAnimationFrame(loop);
+    }
+
+    loop();
+
+  }, (error) => {
+    countdownEl.textContent = 'تعذّر الحصول على الموقع.';
+    console.error(error);
+  });
 }
 
 startCountdown();
